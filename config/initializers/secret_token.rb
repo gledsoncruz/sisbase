@@ -1,0 +1,1 @@
+Geoservicos::Application.config.secret_key_base = '84ba3f6393a12abb00db2f1a28344d0921ca8d2b5bd130bdf18267e1e83f06f74621157bf1696e93d751e817f73c3766574cb6821827f2cd937977f9a1bc7dcd'
