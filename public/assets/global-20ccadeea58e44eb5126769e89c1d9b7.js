@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".alert").fadeOut(5e3)});
