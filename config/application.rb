@@ -24,5 +24,6 @@ module Geoservicos
     config.i18n.default_locale = :'pt-BR'
     config.time_zone = 'Brasilia'
     config.active_record.default_timezone = 'Brasilia'
+    config.serve_static_assets = true
   end
 end

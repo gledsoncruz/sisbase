@@ -28,6 +28,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 gem 'devise', '3.0.0.rc'
+gem 'rails_12factor', group: :production
 #gem 'bcrypt'
 
 group :doc do
