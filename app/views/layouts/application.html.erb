@@ -10,15 +10,159 @@
 <div class="container">
 
 <% if user_signed_in? %>
+
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Sisbase", root_path, :class => 'navbar-brand' %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul> -->
+
+      <ul class="nav navbar-nav navbar-right">
+        <li> <%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 	<% flash.each do |key, value| %>
         <div class="<%= flash_class(key) %>">
               <%= value %>
         </div>
   	<% end %>
-<% end %>
 
-<%= yield %>
 
+<div class="row">
+        <div class="col-sm-3 col-md-3">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close">
+                            </span>Administrador</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user text-info"></span>
+                                        <%= link_to 'Gerenciar Usuários', '#' %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-wrench text-info"></span>
+                                        <%= link_to 'Configurações Gerais', '#' %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                            </span>Principal</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-globe text-info"></span>
+                                        <%= link_to 'Mapa Virtual', '#' %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-search text-info"></span>
+                                        <%= link_to 'Consultas', '#' %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTools"><span class="glyphicon glyphicon-wrench">
+                            </span>Ferramentas</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTools" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-map-marker text-info"></span>
+                                        <%= link_to 'Pontos / Polígonos', '#' %>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user">
+                            </span>Perfil</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                    	<span class="glyphicon glyphicon-pencil text-info">
+                                        <%= link_to 'Alterar Informações', edit_user_registration_path %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    	<span class="glyphicon glyphicon-bell text-info">
+                                        <%= link_to 'Notificações', '#' %><span class="label label-info">1</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-off text-danger"></span>
+                                        <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => "text-danger" %>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9 col-md-9">
+            <%= yield %>
+        </div>
+    </div>
+    <% else %>
+    	<%= yield %>
+    <% end %>
 </div>
 
 </body>

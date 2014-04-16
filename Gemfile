@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-#gem 'pg'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'devise', '3.0.0.rc'
 gem 'rails_12factor', group: :production
+gem 'protected_attributes'
 #gem 'bcrypt'
 
 group :doc do
@@ -36,13 +37,17 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :production do
-  gem 'pg'
-end
+gem 'rgeo'
+gem 'rgeo-geojson'
+gem 'activerecord-postgis-adapter', '~> 0.6.3'
 
-group :development, :test do
-  gem 'sqlite3'
-end
+# group :production do
+#   gem 'pg'
+# end
+
+# group :development, :test do
+#   gem 'sqlite3'
+# end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

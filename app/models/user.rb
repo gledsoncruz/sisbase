@@ -4,4 +4,30 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  attr_accessible :name, :role, :active, :email, :password, :encrypted_password, :password_confirmation
+
+
+  ROLES = %w[admin usuario]
+
+
+   def self.search(search)
+
+    if search
+      where('name LIKE ?', "#{search}%")
+    else
+      scoped
+    end
+  end
+
+  def active_for_authentication?
+    active
+  end
+
+  def inactive_message
+    "Desculpe, sua conta foi desativada."
+  end
+
+
+
 end

@@ -1,11 +1,18 @@
 Geoservicos::Application.routes.draw do
-  devise_for :users
+  #devise_for :users
   #get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  devise_for :users, :path_prefix => 'sisbase'#, :skip => [:registrations, :sessions]
+
+  resources :users do
+    get 'logged', :on => :collection
+  end
+
+  match '*a', :to => 'errors#routing', via: [:get, :post]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

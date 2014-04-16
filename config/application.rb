@@ -19,12 +19,14 @@ module Geoservicos
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
+    I18n.enforce_available_locales = false
+    config.exceptions_app = self.routes
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.i18n.default_locale = :'pt-BR'
     config.time_zone = 'Brasilia'
     config.active_record.default_timezone = 'Brasilia'
     config.serve_static_assets = true
+    config.active_record.whitelist_attributes = true
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif,
                                   "fontawesome-webfont.ttf",
