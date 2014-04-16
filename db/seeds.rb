@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(name: 'Administrador', active: true, role: 'admin', email: 'geo@geo.com', password: '@geo123#')
+User.create(name: 'Usuario', active: true, role: 'usuario', email: 'usuario@user.com', password: '@user123#')

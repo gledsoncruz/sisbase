@@ -27,6 +27,7 @@ module Geoservicos
     config.active_record.default_timezone = 'Brasilia'
     config.serve_static_assets = true
     config.active_record.whitelist_attributes = true
+    #ActiveRecord::Base.include_root_in_json = false
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif,
                                   "fontawesome-webfont.ttf",

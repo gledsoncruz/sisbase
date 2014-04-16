@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :name, :role, :active, :email, :password, :encrypted_password, :password_confirmation
+  attr_accessible :last_sign_in_at, :name, :role, :active, :email, :password, :encrypted_password, :password_confirmation
 
 
   ROLES = %w[admin usuario]
@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
   def inactive_message
     "Desculpe, sua conta foi desativada."
   end
+
+#   def as_json(options={})
+#   super(:only => [:last_sign_in_at])
+# end
 
 
 
