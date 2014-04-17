@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, :admin_filter_registrations, :set_last_request_at
 
-
-
   rescue_from ActiveRecord::RecordNotFound do
   	render_404
   end
