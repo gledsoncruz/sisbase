@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416175708) do
+ActiveRecord::Schema.define(version: 20140520142306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
+
+  create_table "poligonos", force: true do |t|
+    t.string   "descricao",  limit: 80,                                                 null: false
+    t.text     "obs"
+    t.spatial  "the_geom",   limit: {:srid=>4326, :type=>"polygon", :geographic=>true}
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  limit: 80, default: "", null: false

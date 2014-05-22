@@ -1,0 +1,31 @@
+<h1>Listing poligonos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th>Obs</th>
+      <th>The geom</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poligonos.each do |poligono| %>
+      <tr>
+        <td><%= poligono.descricao %></td>
+        <td><%= poligono.obs %></td>
+        <td><%= poligono.the_geom %></td>
+        <td><%= link_to 'Show', poligono %></td>
+        <td><%= link_to 'Edit', edit_poligono_path(poligono) %></td>
+        <td><%= link_to 'Destroy', poligono, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poligono', new_poligono_path %>

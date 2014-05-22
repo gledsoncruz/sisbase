@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  obs: MyString
+  the_geom: 
+
+two:
+  descricao: MyString
+  obs: MyString
+  the_geom: 

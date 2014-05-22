@@ -1,6 +1,6 @@
 development:
   adapter: postgis
-  postgis_extension: true
+  postgis_extension: postgis
   host: localhost #10.1.0.73
   port: 5432
   #encoding: UTF8 #LATIN1
@@ -12,11 +12,11 @@ development:
   password: geo
   #schema_search_path: "public,postgis"
   #script_dir: /Library/PostgreSQL/9.2/share/postgresql/contrib/postgis #MAC OS
-  script_dir: /usr/share/postgresql/9.1/contrib/postgis-1.5
+  #script_dir: /usr/share/postgresql/9.1/contrib/postgis-1.5
 
 production:
   adapter: postgis
-  postgis_extension: true
+  postgis_extension: postgis
   host: localhost #10.1.0.73
   port: 5432
   #encoding: UTF8 #LATIN1   #utf8
@@ -28,7 +28,7 @@ production:
   password: geo
   #schema_search_path: "public,postgis"
   #script_dir: /Library/PostgreSQL/9.2/share/postgresql/contrib/postgis
-  script_dir: /usr/share/postgresql/9.1/contrib/postgis-1.5
+  #script_dir: /usr/share/postgresql/9.1/contrib/postgis-1.5
 
 # test:
 #   adapter: postgis

@@ -1,0 +1,16 @@
+body.devise {
+    background: url("/assets/back.png");
+	background-color: #444;
+    background: url("/assets/pinlayer2.png"),url("/assets/pinlayer1.png"),url("/assets/back.png");
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
+
+#accordion .glyphicon { margin-right:10px; }
+#accordion .fa { margin-right:10px; }
+#accordion .panel-body { padding:0px; }
+#accordion .panel-body table tr td { padding-left: 15px }
+#accordion .panel-body .table {margin-bottom: 0px; }
+#accordion .label { margin-left:10px; }

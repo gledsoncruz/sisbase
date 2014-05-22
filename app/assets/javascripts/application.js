@@ -14,4 +14,7 @@
 //= require TweenLite.min
 //= require jquery_ujs
 //= require bootstrap
+//= require leaflet
+//= require leaflet-google
+//= require leaflet-draw
 //= require_tree .

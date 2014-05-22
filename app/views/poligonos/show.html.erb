@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @poligono.descricao %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @poligono.obs %>
+</p>
+
+<p>
+  <strong>The geom:</strong>
+  <%= @poligono.the_geom %>
+</p>
+
+<%= link_to 'Edit', edit_poligono_path(@poligono) %> |
+<%= link_to 'Back', poligonos_path %>
