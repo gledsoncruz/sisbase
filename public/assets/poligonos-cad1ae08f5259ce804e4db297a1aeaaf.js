@@ -1,26 +1,16 @@
 $(document).ready(function(){
 
-var poligono = "POLYGON((-44.118303895314 -22.4940870647868,-44.11852866126 -22.4938098663542,-44.1200126989574 -22.4924904578161,-44.1211543909801 -22.4935301300232,-44.1231850903364 -22.4937897850486,-44.1250205627289 -22.4939414819046,-44.1252318368933 -22.493404659806))";
-var map = L.map('mapa');
 /*MAPA COM LEAFLET*/
 
-function criarMapa(poly){
+// create a map in the "map" div, set the view to a given place and zoom
+var map = L.map('map').setView([51.505, -0.09], 13);
 
-	map.invalidateSize();
-	map.setView([-22.511447, -44.108906], 13);
+// add an OpenStreetMap tile layer
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
-
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
-
-	var p = omnivore.wkt.parse(poly);
-	p.addTo(map);
-	//map.fitBounds(p.getBounds());
-
-
-}
-
+omnivore.wkt.parse('POINT(-80 0)').addTo(map);
 
 
 /**********************/
@@ -91,14 +81,13 @@ function validaCoords(eixo_x, eixo_y){
 $("#btn_viewPoli").click(function(e){
 
 	preparePolygonWKT();
-	criarMapa(poligono);
 	$('#mapModal').modal('show');
 
 });
 
 
 function preparePolygonWKT(){
-
+	// "POLYGON((-44.118303895314 -22.4940870647868,-44.11852866126 -22.4938098663542,-44.1200126989574 -22.4924904578161,-44.1211543909801 -22.4935301300232,-44.1231850903364 -22.4937897850486,-44.1250205627289 -22.4939414819046,-44.1252318368933 -22.493404659806 (...)"
 	var coordenadas = [];
 	var wkt = [];
 
@@ -117,7 +106,6 @@ function preparePolygonWKT(){
     });
 	wkt.pop();
     console.log("POLYGON(("+wkt+"))");
-    //criarMapa("POLYGON(("+wkt+"))");
 }
 
 });

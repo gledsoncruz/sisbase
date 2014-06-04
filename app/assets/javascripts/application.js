@@ -17,4 +17,5 @@
 //= require leaflet
 //= require leaflet-google
 //= require leaflet-draw
+//= require leaflet-omnivore.min
 //= require_tree .
